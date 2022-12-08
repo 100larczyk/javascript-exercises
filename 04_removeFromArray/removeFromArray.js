@@ -1,6 +1,8 @@
 const removeFromArray = function (array, ...args) {
-  return array.filter((x) => !args.includes(x));
+  return array.filter((arrayItem) => {
+    const found = args.find((argsItem) => argsItem === arrayItem);
+    return found ? false : true;
+  });
 };
 
-// Do not edit below this line
 module.exports = removeFromArray;
